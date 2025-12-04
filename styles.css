@@ -276,3 +276,37 @@ main {
     grid-template-columns: 1fr;
   }
 }
+/* --- Navegación móvil: versión diferente para móvil --- */
+
+/* Por defecto (ordenador/tablet): solo se ve el header normal */
+.mobile-header {
+  display: none;
+}
+
+/* En pantallas pequeñas (móvil) */
+@media (max-width: 768px) {
+  .desktop-header {
+    display: none;
+  }
+
+  .mobile-header {
+    display: block;
+    padding: 0.75rem 1rem 1rem;
+  }
+
+  .mobile-header-top .brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .mobile-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .mobile-nav-links a {
+    font-size: 0.95rem;
+  }
+}
