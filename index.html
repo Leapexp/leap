@@ -139,16 +139,7 @@
   </footer>
 
   <!-- Script menú hamburguesa + año footer -->
-  <script>
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileHeader = document.querySelector('.mobile-header');
-
-    if (mobileToggle && mobileHeader) {
-      mobileToggle.addEventListener('click', function () {
-        mobileHeader.classList.toggle('menu-open');
-      });
-    }
-
+   <script>
     const yearSpan = document.getElementById('year');
     if (yearSpan) {
       yearSpan.textContent = new Date().getFullYear();
