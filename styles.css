@@ -276,7 +276,7 @@ main {
     grid-template-columns: 1fr;
   }
 }
-/* --- Navegación móvil: versión diferente para móvil --- */
+/* --- Navegación móvil: versión con menú hamburguesa --- */
 
 /* Por defecto (ordenador/tablet): solo se ve el header normal */
 .mobile-header {
@@ -285,6 +285,96 @@ main {
 
 /* En pantallas pequeñas (móvil) */
 @media (max-width: 768px) {
+  .desktop-header {
+    display: none;
+  }
+
+  .mobile-header {
+    display: block;
+    position: relative;
+    z-index: 50;
+    padding: 0.75rem 1rem;
+  }
+
+  .mobile-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobile-header-bar .brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  /* Botón hamburguesa */
+  .mobile-menu-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: none;
+    background: #020617; /* color oscuro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 999px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .mobile-menu-toggle span + span {
+    margin-top: 4px;
+  }
+
+  /* Estado "X" cuando el menú está abierto */
+  .mobile-header.menu-open .mobile-menu-toggle span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .mobile-header.menu-open .mobile-menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-header.menu-open .mobile-menu-toggle span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  /* Panel del menú móvil */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.96); /* fondo oscuro */
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    font-size: 1.25rem;
+    z-index: 40;
+  }
+
+  .mobile-header.menu-open .mobile-menu {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .mobile-menu a:hover {
+    text-decoration: underline;
+  }
+}
+{
   .desktop-header {
     display: none;
   }
