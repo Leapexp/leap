@@ -395,6 +395,123 @@ main {
     gap: 0.5rem 1rem;
     margin-top: 0.75rem;
   }
+/* ============================
+   MENÚ MÓVIL LEAP
+   ============================ */
+
+/* Por defecto (pantallas grandes): ocultamos cabecera móvil */
+.mobile-header {
+  display: none;
+}
+
+/* El menú móvil también oculto por defecto */
+.mobile-menu {
+  display: none;
+}
+
+/* A partir de aquí, estilos solo para móviles / tablets pequeñas */
+@media (max-width: 768px) {
+
+  /* Ocultar cabecera de escritorio en móvil */
+  .desktop-header {
+    display: none;
+  }
+
+  /* Mostrar cabecera móvil */
+  .mobile-header {
+    display: block;
+    position: fixed;
+    top: 16px;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    z-index: 1000;
+  }
+
+  .mobile-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f7ff;
+    border-radius: 999px;
+    padding: 10px 18px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+  }
+
+  .mobile-header .brand {
+    font-weight: 700;
+    font-size: 20px;
+    color: #020617;
+  }
+
+  /* Botón redondo tipo hamburguesa */
+  .mobile-menu-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: none;
+    background: #020617;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 999px;
+    margin: 2px 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* MENÚ DESPLEGADO */
+  .mobile-header.menu-open .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    background: #020617;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    gap: 24px;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 999;
+  }
+
+  .mobile-header.menu-open .mobile-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .mobile-header.menu-open .mobile-menu a:hover {
+    opacity: 0.8;
+  }
+
+  /* Animación hamburguesa → X */
+  .mobile-header.menu-open .mobile-menu-toggle span:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .mobile-header.menu-open .mobile-menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-header.menu-open .mobile-menu-toggle span:nth-child(3) {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  /* Un poco más de espacio arriba para el hero en móvil */
+  .hero {
+    padding-top: 140px;
+  }
+}
+
 
   .mobile-nav-links a {
     font-size: 0.95rem;
