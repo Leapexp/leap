@@ -8,19 +8,46 @@
 </head>
 <body>
   <!-- HEADER con el mismo menú -->
-  <header class="site-header">
-    <div class="nav-shell">
+ <header class="site-header">
+  <!-- Versión ESCRITORIO/TABLET -->
+  <div class="nav-shell desktop-header">
+    <div class="brand">leap</div>
+    <nav class="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="programas.html">Programas</a>
+      <a href="destinos.html">Destinos</a>
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <a href="#contacto" class="nav-cta">Contacto</a>
+  </div>
+
+  <!-- Versión MÓVIL con menú hamburguesa -->
+  <div class="mobile-header">
+    <div class="mobile-header-bar">
       <div class="brand">leap</div>
-     <nav class="nav">
-  <a href="index.html">Inicio</a>
-  <a href="programas.html">Programas</a>
-  <a href="destinos.html">Destinos</a>
-  <a href="sobre-nosotros.html">Sobre nosotros</a>
-  <a href="blog.html">Blog</a>
-</nav>
-      <a href="index.html#contacto" class="nav-cta">Contacto</a>
+      <button
+        class="mobile-menu-toggle"
+        aria-label="Abrir menú"
+        onclick="document.querySelector('.mobile-header').classList.toggle('menu-open')"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-  </header>
+
+    <nav class="mobile-menu" aria-label="Menú principal móvil">
+      <a href="#inicio">Inicio</a>
+      <a href="programas.html">Programas</a>
+      <a href="destinos.html">Destinos</a>
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="blog.html">Blog</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
 
   <main>
     <!-- HERO DE DESTINOS -->
