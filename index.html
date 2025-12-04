@@ -26,11 +26,16 @@
     <div class="mobile-header">
       <div class="mobile-header-bar">
         <div class="brand">leap</div>
-        <button class="mobile-menu-toggle" aria-label="Abrir menú">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <button
+  class="mobile-menu-toggle"
+  aria-label="Abrir menú"
+  onclick="document.querySelector('.mobile-header').classList.toggle('menu-open')"
+>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+      
       </div>
 
       <nav class="mobile-menu" aria-label="Menú principal móvil">
