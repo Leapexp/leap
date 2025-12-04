@@ -321,19 +321,29 @@ main {
   }
 
   /* Botón hamburguesa redondo */
-  .mobile-menu-toggle {
-    width: 44px;
-    height: 44px;
-    border-radius: 999px;
-    border: none;
-    background: #020617;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
+ /* Botón hamburguesa (móvil) */
+.mobile-menu-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  background: #050b1b;           /* círculo oscuro */
+  display: flex;
+  flex-direction: column;        /* las rayas una debajo de otra */
+  justify-content: center;
+  align-items: center;
+  gap: 4px;                      /* separación entre rayas */
+  cursor: pointer;
+}
 
-  .mobile-menu-toggle span {
+.mobile-menu-toggle span {
+  width: 18px;
+  height: 2px;
+  background: #ffffff;           /* rayas blancas */
+  border-radius: 999px;
+  display: block;
+}
+{
     display: block;
     width: 18px;
     height: 2px;
