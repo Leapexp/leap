@@ -6,6 +6,16 @@
   <title>Leap – Make the leap</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+  <script>
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const mobileHeader = document.querySelector('.mobile-header');
+
+  if (mobileToggle && mobileHeader) {
+    mobileToggle.addEventListener('click', function () {
+      mobileHeader.classList.toggle('menu-open');
+    });
+  }
+</script>
 <body>
   <!-- NAVBAR flotante tipo Yugo/EF -->
   <header class="site-header">
